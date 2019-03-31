@@ -297,6 +297,10 @@ function LQOI.get_objective_value(model::Optimizer)
     return c_api_getobjval(model.inner)
 end
 
+function LQOI.get_relative_mip_gap(model::Optimizer)
+    return get_rel_gap(model.inner)
+end
+
 function LQOI.get_objective_bound(model::Optimizer)
     return get_best_bound(model.inner)
 end
